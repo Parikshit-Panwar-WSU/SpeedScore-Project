@@ -1,0 +1,40 @@
+import { faAlignCenter } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
+import logo from '../images/sslogo2.png'
+
+class FeedPage extends React.Component {
+
+    render() {
+        return (
+            <div id="feedModeTab" className="mode-page" role="tabpanel"
+                 aria-label="Feed Tab" tabIndex="0">
+
+                {/* Toast Notification for Profile Update */}
+                {this.props.showToast ? 
+                <div id="accountCreated" className="centered" 
+                       role="alert" aria-atomic="true" aria-live="assertive" 
+                       style={{backgroundColor: 'lightgoldenrodyellow',
+                               display: 'flex',
+                               lineHeight: 3}}>
+                  <div className="toast-text">
+                     Profile has been successfully updated!.
+                  </div>
+                    <button id="accountCreatedClose" 
+                            type="button" 
+                            className="btn-close toast-close" 
+                            aria-label="Close"
+                            onClick={this.props.toggleToastFunction}>
+                           <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div> : null}
+
+                <h1 className="mode-page-header">Activity Feed</h1>
+                <p className="mode-page-content">This page is under construction.</p>
+                <img className="mode-page-icon" 
+                     src={logo} alt="SpeedScore logo"></img>
+            </div>
+        );
+    }   
+}
+
+export default FeedPage;
